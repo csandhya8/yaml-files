@@ -50,7 +50,7 @@ spec:
     spec: 
       containers: 
       - name: helloworld
-        image: autodeploy.azurecr.io/csandhya8/csandhya8/spring-boot-maven-example-helloworld:#{Release.Artifacts._autodeploy2.BuildId}#
+        image: autodeploy.azurecr.io/csandhya8/spring-boot-maven-example-helloworld:#{Release.Artifacts._autodeploy2.BuildId}#
         ports: 
         - containerPort: 8081
       imagePullSecrets:
