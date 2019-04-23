@@ -37,20 +37,20 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 
 kind: Deployment 
 metadata: 
-  name: myapp-deployment 
+  name: helloworld-deployment 
 spec: 
   selector: 
     matchLabels: 
-      app: myapp 
+      app: helloworld 
   replicas: 2 # tells deployment to run 2 pods matching the template 
   template:
     metadata: 
       labels: 
-        app: myapp
+        app: helloworld
     spec: 
       containers: 
-      - name: myapp
-        image: autodeploy.azurecr.io/csandhya8/maven-hello-world:#{Release.Artifacts._My-app.BuildId}#
+      - name: helloworld
+        image: autodeploy.azurecr.io/csandhya8/csandhya8/spring-boot-maven-example-helloworld:#{Release.Artifacts._autodeploy2.BuildId}#
         ports: 
         - containerPort: 8081
       imagePullSecrets:
@@ -59,10 +59,10 @@ spec:
 kind: Service 
 apiVersion: v1 
 metadata: 
-  name: myapp-service 
+  name: helloworld-service 
 spec: 
   selector: 
-    app: myapp 
+    app: helloworld 
   ports: 
   - protocol: TCP 
     port: 8081 
