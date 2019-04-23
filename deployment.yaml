@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: java 
-        image: autodeploy.azurecr.io/csandhya8/springbootmavenjunitsample:#{Build.BuildId}#
+        image: autodeploy.azurecr.io/csandhya8/springbootmavenjunitsample:#{Version}#
         ports: 
         - containerPort: 8080
       imagePullSecrets:
@@ -50,7 +50,7 @@ spec:
     spec: 
       containers: 
       - name: myapp
-        image: autodeploy.azurecr.io/csandhya8/maven-hello-world:#{Build.BuildId}#
+        image: autodeploy.azurecr.io/csandhya8/maven-hello-world:#{Version}#
         ports: 
         - containerPort: 8081
       imagePullSecrets:
